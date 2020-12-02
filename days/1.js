@@ -1,23 +1,6 @@
-const fs = require('fs');
+const { readFileToIntegers } = require('../helpers/read.js');
+
 const TARGET = 2020;
-
-const getNumbers = (fileName) => {
-  const contents = [];
-
-  try {
-    const data = fs.readFileSync(`./input/${fileName}`, 'UTF-8');
-    data
-      .split(/\r?\n/)
-      .map(line => contents.push(parseInt(line)));
-  } catch (err) {
-    console.error(err);
-  }
-
-  // sort & unique
-  // (i might not even need unique, but w/e)
-  contents.sort((a, b) => a - b);
-  return [...new Set(contents)];
-};
 
 const partOne = (numbers) => {
   const hash = {};
@@ -53,6 +36,9 @@ const partTwo = (numbers) => {
   }
 };
 
-const numbers = getNumbers('1.txt');
+const contents = readFileToIntegers('1.txt');
+contents.sort((a, b) => a - b);
+const numbers = [...new Set(contents)];
+
 console.log('Part one:', partOne(numbers));
 console.log('Part two:', partTwo(numbers));
