@@ -35,11 +35,10 @@ const seatId = (seat) => (row(seat) * 8) + column(seat);
 const partTwo = (seatIds) => {
   for (let i = 0; i < seatIds.length - 1; i++) {
     if ((1 + seatIds[i]) !== seatIds[i + 1]) {
-      return seatIds[i] + 1
+      return seatIds[i] + 1;
     }
   }
 };
-
 
 const seats = readFile('5.txt');
 const seatIds = seats.map(seat => seatId(seat)).sort((a,b) => a - b);
