@@ -61,4 +61,3 @@ console.log('Part one:', p1);
 
 const p2 = partTwo(xmas, p1);
 console.log('Part two:', p2);
-
