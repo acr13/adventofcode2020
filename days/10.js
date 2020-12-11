@@ -30,7 +30,6 @@ const partTwo = (numbers) => {
   return (paths[1] || 0) + (paths[2] || 0) + (paths[3] || 0);
 };
 
-
 const numbers = readFileToIntegers('10.txt').sort((a, b) => a - b);
 console.log('Part one:', partOne(numbers));
 console.log('Part two:', partTwo(numbers));
