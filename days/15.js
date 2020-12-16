@@ -1,33 +1,28 @@
 const run = (numbers, target) => {
-  const spoken = {};
-  let turn = 1;
-  let nextNumber = null;
+  const spoken = new Map();
+  numbers.forEach((n, i) => spoken.set(n, i));
 
-  for (let i = 0; i < numbers.length; i++) {
-    spoken[numbers[i]] = turn;
-    nextNumber = numbers[i];
-    turn++;
-  }
+  let lastNumber = numbers[numbers.length - 1];
+  let lastNumberIndex = numbers.length - 1;
+  let lastNumberLastIndex = undefined;
 
-  turn--;
-  nextNumber = 0;
-
-  while (turn < target - 1) {
-    turn++;
-    let prev = null;
-    if (!spoken[nextNumber]) {
-      prev = nextNumber;
-      nextNumber = 0;
+  for (let i = numbers.length; i < target; i++) {
+    let thisNumber;
+    if (lastNumberLastIndex !== undefined) {
+      thisNumber = lastNumberIndex - lastNumberLastIndex;
     } else {
-      prev = nextNumber;
-      nextNumber = turn - spoken[nextNumber];
+      thisNumber = 0;
     }
 
-    spoken[prev] = turn;
+    lastNumber = thisNumber;
+    lastNumberIndex = i;
+    lastNumberLastIndex = spoken.get(thisNumber);
+
+    spoken.set(thisNumber, i);
   }
 
-  return nextNumber;
-}
+  return lastNumber;
+};
 
 console.log('Part one:', run([1,0,16,5,17,4], 2020));
 console.log('Part two:', run([1,0,16,5,17,4], 30000000));
