@@ -24,7 +24,7 @@ const evaluate = (str, p2) => {
        .replaceRecursive(MULT_RE, (match) => parseInt(match[1]) * parseInt(match[2]))
     );
   }
-  return parseInt(s.replaceExhaustive(ORDERED_RE, (match) => eval(match[0])));
+  return parseInt(s.replaceRecursive(ORDERED_RE, (match) => eval(match[0])));
 };
 
 
