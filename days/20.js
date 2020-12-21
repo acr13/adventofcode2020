@@ -22,35 +22,6 @@ const parse = (input) => {
 
 const reverse = (str) => str.split('').reverse().join('');
 
-// for a tile, return the 8 possible edges
-// (each edge can be reversed, since we can flip a tile)
-const getEdgesOfTile = (tile) => {
-  const edges = [];
-
-  // top 
-  edges.push(tile[0].join(''));
-  edges.push([...tile[0]].reverse().join(''))
-
-  // bottom
-  edges.push(tile[tile.length - 1].join(''));
-  edges.push([...tile[tile.length - 1]].reverse().join(''));
-
-  let left = '';
-  let right = '';
-
-  for (let i = 0; i < tile.length; i++) {
-    left += tile[i][0];
-    right += tile[i][tile.length - 1];
-  }
-
-  edges.push(left);
-  edges.push(left.split('').reverse().join(''));
-  edges.push(right);
-  edges.push(right.split('').reverse().join(''));
-
-  return edges;
-};
-
 // given a tile and a side [0,1,2,3] return that edge
 const edge = (tile, side) => {
   if (side === 0) { // north
@@ -256,7 +227,7 @@ const addTileToGridNextRow = (grid, tile) => {
 const makeGrid = (tiles, corners) => {
   const grid = [];
   const SIZE = Math.sqrt(Object.keys(tiles).length);
-  const NUM_ROWS = SIZE * 8;
+  const NUM_ROWS = SIZE * 8; // tile minus top and bottom row
   for (let i = 0; i < NUM_ROWS; i++) {
     grid.push([]);
   }
