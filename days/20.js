@@ -9,7 +9,7 @@ const parse = (input) => {
     if (input[i] === '') {
       continue;
     } else if (input[i].indexOf('Tile') !== -1) {
-      const [left, right] = input[i].split(' ');
+      const [, right] = input[i].split(' ');
       id = Number(right.substring(0, right.length - 1));
       tiles[id] = [];
     } else {
@@ -91,20 +91,6 @@ const getCorners = (tiles) => {
   }
 
   return corners;
-};
-
-const print = (tile) => {
-  const R = tile.length;
-  const C = tile[0].length;
-
-  for (let i = 0; i < R; i++) {
-    let str = '';
-    for (let j = 0; j < C; j++) {
-      str += tile[i][j];
-    }
-    console.log(str);
-  }
-  console.log();
 };
 
 // 90 degrees clockwise
@@ -306,7 +292,7 @@ console.log('Part one:', p1);
 
 const grid = makeGrid(tiles, corners);
 // print(grid);
-MONSTER_PATTERN = [
+const MONSTER_PATTERN = [
   '                  # ',
   '#    ##    ##    ###',
   ' #  #  #  #  #  #   '

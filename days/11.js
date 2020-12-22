@@ -35,8 +35,6 @@ const findOccupiedSeatInThisDirection = (grid, r, c, diff) => {
 
 const numOccupied2 = (grid, r, c) => {
   let seats = 0;
-  let cc = c;
-  let rr = r;
   
   // left, right, up, down
   seats += findOccupiedSeatInThisDirection(grid, r, c, [0, -1]);

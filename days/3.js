@@ -1,7 +1,6 @@
 const { readFileToGrid } = require('../helpers/read.js');
 
 const grid = readFileToGrid('3.txt');
-const position = [0,0];
 const LENGTH = grid[0].length;
 const TREE = '#';
 

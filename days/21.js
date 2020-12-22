@@ -61,7 +61,7 @@ const partTwo = (input) => {
   const allergens = Object.entries(mapOfSets).sort((a, b) => a[1].length - b[1].length)
   
   for (let i = 0; i < allergens.length; i++) {
-    const [allergen, ingredients] = allergens[i];
+    const [, ingredients] = allergens[i];
 
     if (ingredients.length === 1) {
       for (let j = 0; j < allergens.length; j++) {

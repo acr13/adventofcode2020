@@ -28,11 +28,11 @@ const run = (program) => {
   return { acc, isInfinite: false };
 };
 
-const { acc, isInfinite } = run(program);
+const { acc } = run(program);
 console.log('Part one:', acc);
 
 for (let i = 0; i < program.length; i++) {
-  const [inst, amt] = program[i];
+  const [inst] = program[i];
   if (inst === 'jmp' || inst === 'nop') {
     const copy = JSON.parse(JSON.stringify(program));
     copy[i] = inst === 'jmp' ? 'nop' : 'jmp'

@@ -11,7 +11,7 @@ const partOne = (answers) => {
     } else {
       const letters = answers[i].split('');
       
-      for (j = 0; j < letters.length; j++) {
+      for (let j = 0; j < letters.length; j++) {
         yes.add(letters[j]);
       }
     }
@@ -39,7 +39,7 @@ const partTwo = (answers) => {
     } else {
       const letters = answers[i].split('');
       
-      for (j = 0; j < letters.length; j++) {
+      for (let j = 0; j < letters.length; j++) {
         if (!yes[letters[j]]) { yes[letters[j]] = 0; }
         yes[letters[j]]++;
       }

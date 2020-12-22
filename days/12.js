@@ -2,7 +2,6 @@ const { readFile } = require('../helpers/read');
 
 // north, east, south, west
 const DIRECTIONS = ['N', 'E', 'S', 'W'];
-const DIRS = [0, 1, 2, 3];
 const DELTAS = {
   N: [1, 1],
   E: [0, 1],

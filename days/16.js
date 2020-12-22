@@ -24,7 +24,7 @@ for (let i = 0; i < input.length; i++) {
   } else if (breaks === 1 && line.indexOf('your') === -1) {
     your = line.split(',').map(Number);
   } else if (breaks === 2 && line.indexOf('nearby') === -1) {
-    t = line.split(',').map(Number);
+    const t = line.split(',').map(Number);
     nearby.push(t);
   }
 }
