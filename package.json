@@ -1,0 +1,23 @@
+{
+  "name": "adventofcode2020",
+  "version": "1.0.0",
+  "description": "www.adventofcode.com",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acr13/adventofcode2020.git"
+  },
+  "author": "Alex Richardson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acr13/adventofcode2020/issues"
+  },
+  "homepage": "https://github.com/acr13/adventofcode2020#readme"
+}

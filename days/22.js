@@ -36,8 +36,8 @@ const play = (one, two) => {
 };
 
 const playRecursive = (one, two) => {
-  const [_, list] = recursive(one, two, false);
-	return score(list);
+  const [, list] = recursive(one, two);
+  return score(list);
 };
 
 const recursive = (one, two) => {
@@ -55,7 +55,7 @@ const recursive = (one, two) => {
 
     let winner;
     if (one.length >= card1 && two.length >= card2) { // sub-game
-      [winner] = recursive(one.slice(0, card1), two.slice(0, card2));
+      [winner] = recursive(one.slice(0, card1), two.slice(0, card2))
     } else {
       winner = card1 > card2 ? 1 : 2;
     }
