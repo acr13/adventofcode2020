@@ -4,7 +4,7 @@ const readFile = (fileName) => {
   const contents = [];
 
   try {
-    const data = fs.readFileSync(`./input/${fileName}`, 'UTF-8')
+    fs.readFileSync(`./nodejs/input/${fileName}`, 'UTF-8')
       .split(/\r?\n/)
       .map(line => contents.push(line));
   } catch (err) {
@@ -14,14 +14,13 @@ const readFile = (fileName) => {
   return contents;
 };
 
-const readFileToIntegers = (fileName) =>
-  readFile(fileName).map(s => parseInt(s));
+const readFileToIntegers = (fileName) => readFile(fileName).map(s => parseInt(s));
 
 const readFileToGrid = (fileName) => {
   const grid = [];
 
   try {
-    const data = fs.readFileSync(`./input/${fileName}`, 'UTF-8')
+    fs.readFileSync(`./input/${fileName}`, 'UTF-8')
       .split(/\r?\n/)
       .map(line => grid.push([...line.split('')]));
   } catch (err) {
